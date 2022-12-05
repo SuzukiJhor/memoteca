@@ -7,4 +7,19 @@ import { Component } from '@angular/core';
 })
 export class CriarPensamentoComponent {
 
+  pensamento = {
+    id: '1',
+    conteudo: 'Aprendendo Angular',
+    autoria: 'Dev',
+    modelo: ''
+  }
+
+  criarPensamento() {
+    alert('Novo pensamento criado')
+  }
+
+  cancelarPensamento(){
+    alert('Pensamento cancelado')
+  }
+
 }

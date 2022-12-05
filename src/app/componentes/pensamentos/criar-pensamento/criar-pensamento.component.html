@@ -10,7 +10,8 @@
         class="input"
         id="pensamento"
         name="pensamento"
-        placeholder="Digite um pensamento">
+        placeholder="Digite um pensamento"
+        [value]="pensamento.conteudo">
 
       <label for="autoria">Autoria ou fonte</label>
       <input
@@ -18,7 +19,8 @@
         class="input"
         id="autoria"
         name="autoria"
-        placeholder="Digite a autoria ou fonte">
+        placeholder="Digite a autoria ou fonte"
+        [value]="pensamento.autoria">
 
         <label for="modelo">Selecione o modelo do card:</label>
 
@@ -39,8 +41,8 @@
             Prévia:
             <div class="modelo modelo1 ff-roboto-mono">
               <img src="../../../../assets/Imagens/modelo1.png" alt="Aspas Azuis">
-              <p class="conteudo">Aqui vai o conteúdo</p>
-              <p class="autoria"><b>Aqui vai a autoria</b></p>
+              <p class="conteudo">{{ pensamento.conteudo }}</p>
+              <p class="autoria"><b>{{ pensamento.autoria }}</b></p>
             </div>
           </div>
 
@@ -60,8 +62,8 @@
             Prévia:
             <div class="modelo modelo2 ff-roboto-mono">
               <img src="../../../../assets/Imagens/modelo2.png" alt="Aspas azul claro">
-              <p class="conteudo">Aqui vai o conteúdo</p>
-              <p class="autoria"><b>Aqui vai a autoria</b></p>
+              <p class="conteudo">{{ pensamento.conteudo }}</p>
+              <p class="autoria"><b>{{ pensamento.autoria }}</b></p>
             </div>
           </div>
 
@@ -81,12 +83,16 @@
             Prévia:
             <div class="modelo modelo3 ff-roboto-mono">
               <img src="../../../../assets/Imagens/modelo3.png" alt="Aspas Azuis">
-              <p class="conteudo">Aqui vai o conteúdo</p>
-              <p class="autoria"><b>Aqui vai a autoria</b></p>
+              <p class="conteudo">{{ pensamento.conteudo }}</p>
+              <p class="autoria"><b>{{ pensamento.autoria }}</b></p>
             </div>
           </div>
         </div>
 
+        <div class="acoes">
+          <button (click)="criarPensamento()" class="botao">Salvar</button>
+          <button (click)= "cancelarPensamento()" class="botao">Cancelar</button>
+        </div>
 
     </form>
 </section>
