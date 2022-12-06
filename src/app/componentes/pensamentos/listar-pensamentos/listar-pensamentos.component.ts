@@ -7,4 +7,25 @@ import { Component } from '@angular/core';
 })
 export class ListarPensamentosComponent {
 
+  listaPensamentos = [
+
+    // {
+    // conteudo: 'Comunicação entre componentes',
+    // autoria: 'Angular',
+    // modelo: 'modelo3'
+    // },
+
+    // {
+    // conteudo: 'Passo informações para o componente filho',
+    // autoria: 'componente pai',
+    // modelo: 'modelo3'
+    // },
+
+    // {
+    // conteudo: 'Minha propriedade é decorada com @Input()',
+    // autoria: 'componente filho',
+    // modelo: 'modelo1'
+    // }
+  ];
+
 }
