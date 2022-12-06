@@ -1,3 +1,4 @@
+import { PensamentoService } from './../pensamento.service';
 import { Pensamento } from './../pensamento';
 import { Component } from '@angular/core';
 
@@ -9,14 +10,15 @@ import { Component } from '@angular/core';
 export class CriarPensamentoComponent {
 
   pensamento: Pensamento = {
-    id: 1,
-    conteudo: 'Aprendendo Angular',
-    autoria: 'Dev',
+    conteudo: '',
+    autoria: '',
     modelo: 'modelo1'
   }
 
+  constructor(private service: PensamentoService) { }
+
   criarPensamento() {
-    alert('Novo pensamento criado')
+    this.service.criar(this.pensamento).subscribe
   }
 
   cancelarPensamento(){
