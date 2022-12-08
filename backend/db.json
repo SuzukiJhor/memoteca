@@ -1,27 +1,34 @@
 {
-  "pensamentos":[
+  "pensamentos": [
     {
       "id": 1,
       "conteudo": "Que bom que voce veio",
       "autoria": "JhordKendy",
       "modelo": "modelo1"
-
     },
-
     {
       "id": 2,
       "conteudo": "Oi, eu dou o Goku!",
       "autoria": "JhordKendy",
       "modelo": "modelo2"
-
     },
-
     {
       "id": 3,
       "conteudo": "Não é o rosto que faz de alguém um monstro, são as escolhas que elas fazem para as suas vidas",
       "autoria": "JhordKendy",
       "modelo": "modelo3"
-
+    },
+    {
+      "conteudo": "ola marte",
+      "autoria": "Sol",
+      "modelo": "modelo1",
+      "id": 4
+    },
+    {
+      "conteudo": "Kakaroto",
+      "autoria": "Vegeta",
+      "modelo": "modelo2",
+      "id": 6
     }
   ]
 }
