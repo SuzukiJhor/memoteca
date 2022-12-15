@@ -1,9 +1,11 @@
-<section class="container criar-pensamentos ff-inter">
+
+<section class="container editar-pensamentos ff-inter">
   <header class="header">
     <h2>Adicione um <br> pensamento novo:</h2>
   </header>
 
-    <form [formGroup]="formulario" action="">
+    <form [formGroup]="formulario"  *ngIf="formulario" action="">
+
       <label for="pensamento">pensamento</label>
       <input
         type="textarea"
@@ -13,9 +15,8 @@
         placeholder="Digite um pensamento"
         >
 
-        <div class="mensagem_erro"
-        *ngIf="formulario.get('conteudo')?.errors?.['required'] && formulario.get('conteudo')?.touched">
-          Pensamento é obrigatorio!
+        <div class="mensagem__erro" *ngIf="formulario.get('conteudo')?.errors && formulario.get('conteudo')?.touched">
+          Pensamento é obrigatório!
         </div>
 
       <label for="autoria">Autoria ou fonte</label>
@@ -27,19 +28,16 @@
         placeholder="Digite a autoria ou fonte"
         >
 
-        <div class="mensagem_erro"
-          *ngIf="formulario.get('autoria')?.errors?.['required'] && formulario.get('autoria')?.touched">
-          Autoria é obrigatória
+        <div class="mensagem__erro" *ngIf="formulario.get('autoria')?.errors?.['required'] && formulario.get('autoria')?.touched">
+          Autoria é obrigatório!
         </div>
 
-        <div class="mensagem_erro"
-        *ngIf="formulario.get('autoria')?.errors?.['minlength']">
-          Autoria precisa ter no minimo 3 caracteres.
+        <div class="mensagem__erro" *ngIf="formulario.get('autoria')?.errors?.['minlength']">
+          Autoria precisa ter no minimo 3 caracteres!
         </div>
 
-        <div class="mensagem_erro"
-        *ngIf="formulario.get('autoria')?.errors?.['minusculo']">
-          Esse campo aceita apenas letras minusculas
+        <div class="mensagem__erro" *ngIf="formulario.get('autoria')?.errors?.['minusculo']">
+          Esse campo aceita apenas leras minusculas!
         </div>
 
         <label for="modelo">Selecione o modelo do card:</label>
@@ -84,8 +82,8 @@
             Prévia:
             <div class="modelo modelo2 ff-roboto-mono">
               <img src="../../../../assets/Imagens/modelo2.png" alt="Aspas azul claro">
-              <p class="conteudo">{{ formulario.get('conteudo')?.value}}</p>
-              <p class="autoria"><b>{{ formulario.get('autoria')?.value}}</b></p>
+              <p class="conteudo">{{ formulario.get('conteudo')?.value }}</p>
+              <p class="autoria"><b>{{ formulario.get('autoria')?.value }}</b></p>
             </div>
           </div>
 
@@ -97,7 +95,7 @@
               id="modelo3"
               value="modelo3"
               formControlName="modelo"
-             >
+              >
               <div class="custom-radio">
                 <span></span>
               </div>
@@ -113,11 +111,7 @@
         </div>
 
         <div class="acoes">
-          <button
-            [disabled]="!formulario.valid"
-            (click)="criarPensamento()"
-            [ngClass]="habilitarBotao()"
-            >Salvar</button>
+          <button (click)="editarPensamento()" class="botao">Salvar</button>
           <button routerLink="/listarPensamento" (click)="cancelarPensamento()" class="botao">Cancelar</button>
         </div>
 
